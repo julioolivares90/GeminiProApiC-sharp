@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeminiProApiC-sharp", "GeminiProApiC-sharp\GeminiProApiC-sharp.csproj", "{E8882AC1-34A6-4A51-AFCB-14F96C26DB13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeminiProTest", "GeminiProTest\GeminiProTest.csproj", "{DEA2072B-7F0E-492E-80CD-F11036A76E48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E8882AC1-34A6-4A51-AFCB-14F96C26DB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8882AC1-34A6-4A51-AFCB-14F96C26DB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8882AC1-34A6-4A51-AFCB-14F96C26DB13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA2072B-7F0E-492E-80CD-F11036A76E48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA2072B-7F0E-492E-80CD-F11036A76E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA2072B-7F0E-492E-80CD-F11036A76E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA2072B-7F0E-492E-80CD-F11036A76E48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

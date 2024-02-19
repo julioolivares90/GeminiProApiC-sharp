@@ -1,5 +1,6 @@
 ﻿using GeminiProApiC_sharp.Enums;
 using GeminiProApiC_sharp.Models.Request;
+using GeminiProApiC_sharp.Models.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,6 @@ namespace GeminiProApiC_sharp
 {
     public class GeminiPro
     {
-        private  HttpClient httpClient;
-
         private  string BASE_URL = "";
 
         private  string API_KEY = "";
@@ -37,15 +36,15 @@ namespace GeminiProApiC_sharp
             }
         }
 
-        public async Task<string> GenerateContentAsync(string prompt)
+        public async Task<GeminiResponse> GenerateContentAsync(string prompt)
         {
             using (var httpClient = new HttpClient())
             {
                 var request = new Request
                 {
-                    contents = new List<Content> 
+                    contents = new List<Models.Request.Content> 
                     {
-                       new Content
+                       new Models.Request.Content
                        {
                            parts = new List<Part>
                            {
@@ -59,23 +58,23 @@ namespace GeminiProApiC_sharp
                 };
                 var json = JsonSerializer.Serialize(request);
 
-                HttpContent content = new StringContent(json);
+                HttpContent content = new StringContent(json,Encoding.UTF8,"application/json");
 
                 var result = await httpClient.PostAsync(BASE_URL, content);
 
                 if (result.IsSuccessStatusCode)
                 {
                     var jsonString = await result.Content.ReadAsStringAsync();
-                    return jsonString;
+
+                    var response = JsonSerializer.Deserialize<GeminiResponse>(jsonString);
+                    return response;
                 }
                 else
                 {
-                    return string.Empty;
+                    return new GeminiResponse();
                 }
             
             }
-
-            return string.Empty;
         }
 
         
